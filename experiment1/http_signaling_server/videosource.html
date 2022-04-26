@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Source</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="menu">
+        <button id="button_add_media" class="menu_item">Add media</button>
+        <button id="button_open" class="menu_item">Open connection</button>
+        <button id="button_close" class="menu_item">Close connection</button>
+        <!-- <button id="button_stream" class="menu_item">Stream video</button> -->
+        <!-- <button id="button_camera">Add Camera</button> -->
+        <button class="menu_item menu_separator">----------</button>
+        <button id="button_state" class="menu_item">Connection state</button>
+        <button id="button_message" class="menu_item">Send message</button>
+      </div>
+      <div id="video_panel">
+        <div id="display_main"><video id="video_main"></video></div>
+        <div id="displays_mosaic">
+          <div><video id="video0"></video></div>
+          <div><video id="video1"></video></div>
+          <div><video id="video2"></video></div>
+          <div><video id="video3"></video></div>
+        </div>
+      </div>
+    </div>
+    <script src="videosource.js"></script>
+  </body>
+</html>
