@@ -94,6 +94,10 @@ gst-launch-1.0 rtspsrc location=rtsp://admin:visio1234@192.168.5.13 ! 'applicati
 
 gst-launch-1.0 videotestsrc pattern=ball ! clockoverlay color=0 ! x264enc ! rtph264pay ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)96' ! udpsink host=192.168.2.183 port=5000 rtspsrc location=rtsp://admin:visio1234@192.168.5.13 ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)96' ! udpsink host=192.168.2.183 port=5001 videotestsrc pattern=smpte ! clockoverlay color=0 ! x264enc ! rtph264pay ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)96' ! udpsink host=192.168.2.183 port=5002 rtspsrc location=rtsp://admin:Visio#123@192.168.0.92:554/0/profile2/media.smp ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)98' ! udpsink host=192.168.2.183 port=5003
 
+gst-launch-1.0 videotestsrc pattern=smpte ! clockoverlay color=0 ! x264enc intra-refresh=true key-int-max=10 ! rtph264pay mtu=1300 ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)96' ! udpsink host=192.168.2.183 port=10010
+
+gst-launch-1.0 videotestsrc pattern=ball ! clockoverlay color=-1 ! x264enc intra-refresh=true key-int-max=10 ! rtph264pay mtu=1300 ! 'application/x-rtp,media=(string)video,encoding-name=(string)H264,payload=(int)96' ! udpsink host=192.168.2.183 port=10010
+
 ### Receive RTP stream
 
 gst-launch-1.0 udpsrc caps="application/x-rtp,media=(string)video,clock-rate=(int)90000,encoding-name=(string)H264" port=5000 ! rtph264depay ! avdec_h264 ! fakesink dump=true

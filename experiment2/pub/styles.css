@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+  box-sizing: border-box;
+
+  /* DEBUG */
+  /* border-color: black; */
+  /* border-width: 1px; */
+  /* border-style: solid; */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* DEBUG */
+  /* border-color: yellow; */
+}
+
+#menu {
+  display: inline-block;
+  /* DEBUG */
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#video_panel {
+  flex-grow: 1;
+  display: inline-block;
+  text-align: center;
+  /* DEBUG */
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+button.menu_item {
+  width: 200px;
+  font-size: 15px;
+  text-align: left;
+  display: block;
+  /* DEBUG */
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+button.menu_separator {
+  text-align: center;
+}
+
+#display_main {
+  height: 60%;
+  text-align: center;
+  /* DEBUG */
+  /* border-color: green; */
+}
+
+video {
+  height: 100%;
+  /* DEBUG */
+  border-color: black;
+}
+
+#displays_mosaic {
+  height: 40%;
+  /* DEBUG */
+  /* border-color: black;
+  border-width: 1px;
+  border-style: solid; */
+}
+
+#displays_mosaic > div {
+  height: 50%;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  /* DEBUG */
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
